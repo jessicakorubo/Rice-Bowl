@@ -50,7 +50,7 @@ body {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.containerhero .navbarNone .hamLinks {
+.containerhero .navbarNone .hamburger {
   display: none;
 }
 .containerhero .navbarNone .navlinks ul {
@@ -97,7 +97,7 @@ body {
   margin-top: 2rem;
 }
 .containerhero .hero .heroimage {
-  width: 900px;
+  width: 100%;
   height: 400px;
 }
 .containerhero .hero .heroimage img {
@@ -361,12 +361,53 @@ body {
     padding: 1rem 2rem;
     gap: 0;
   }
-  .containerBig .containerhero .navbarNone .hamLinks {
-    display: contents;
+  .containerBig .containerhero .navbarNone .hamburger {
+    display: flex;
+    height: 50px;
+    width: 50px;
+    border: 3px solid whitesmoke;
+    position: relative;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
   }
-  .containerBig .containerhero .navbarNone .hamLinks img {
-    width: 40px;
-    height: 40px;
+  .containerBig .containerhero .navbarNone .hamburger::after {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    border: 3px solid rgb(199, 42, 42);
+    border-radius: 50%;
+    animation: hamburger_puls 1s ease infinite;
+  }
+  .containerBig .containerhero .navbarNone .hamburger.active .bar::before {
+    bottom: 0;
+  }
+  .containerBig .containerhero .navbarNone .hamburger.active .bar::after {
+    top: 0;
+  }
+  .containerBig .containerhero .navbarNone .hamburger .bar {
+    height: 2px;
+    width: 25px;
+    position: relative;
+    background-color: rgb(100, 10, 10);
+  }
+  .containerBig .containerhero .navbarNone .hamburger .bar::after, .containerBig .containerhero .navbarNone .hamburger .bar::before {
+    transition: 0.3s ease;
+    transition-property: top, bottom;
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    background-color: rgb(100, 10, 10);
+  }
+  .containerBig .containerhero .navbarNone .hamburger .bar::before {
+    bottom: 8px;
+  }
+  .containerBig .containerhero .navbarNone .hamburger .bar::after {
+    top: 8px;
   }
   .containerBig .containerhero .navbarNone .navlinks {
     display: none;
@@ -383,6 +424,9 @@ body {
   .containerBig .containerhero .hero .herotext .riceHero {
     font-size: 20px;
   }
+  .containerBig .containerhero .hero .herotext .riceHero span {
+    font-size: 150px;
+  }
   .containerBig .containerhero .hero .herotext p {
     font-size: 12px;
   }
@@ -390,9 +434,15 @@ body {
     width: 80%;
     height: 400px;
   }
+  .containerBig .containerhero .hero .heroimage img {
+    width: 100%;
+  }
   .about {
     flex-direction: column-reverse;
     width: 100%;
+  }
+  .about .hieuBowlImage {
+    transform: scale(0.7);
   }
   .about .hieuBowlText {
     width: 100%;
@@ -431,5 +481,15 @@ body {
   }
   .getStarted .email #email {
     width: 70%;
+  }
+}
+@keyframes hamburger_puls {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.3);
+    opacity: 0.1;
   }
 }/*# sourceMappingURL=styles.css.map */

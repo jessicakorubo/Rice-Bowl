@@ -25,3 +25,9 @@ arrowLeft.onclick = function(){
     });
     
 }
+const hamburger = document.querySelector(".hamburger")
+hamburger.addEventListener('click',()=> {
+    console.log('activeee')
+    hamburger.classList.toggle('active');
+    mobile_menu.classList.toggle('active');
+});
