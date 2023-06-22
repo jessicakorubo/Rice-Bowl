@@ -319,7 +319,7 @@ body {
   display: flex;
   background-color: rgb(109, 143, 244);
   color: white;
-  padding: 7rem 7rem 5rem 5rem;
+  padding: 7rem 0 5rem 0;
   align-items: center;
   justify-content: space-around;
 }
@@ -464,19 +464,25 @@ body {
     background-position: 5% 100%, 90% 5%;
     gap: 4rem;
   }
+  .testimonials .testimonialSlide {
+    max-width: 80vw;
+    overflow: hidden;
+  }
   .testimonials .customers {
     text-align: center;
     width: 100%;
   }
   .getStarted {
     flex-direction: column;
-    background-position: 0% 90%, 132% 5%;
-    width: 100vw;
+    background-position: 0% 90%, 90vw 5%;
+    width: 96vw;
     justify-content: center;
     align-items: center;
   }
+  .getStarted .getPara {
+    display: none;
+  }
   .getStarted .email {
-    width: 80vw;
     margin: auto;
   }
   .getStarted .email #email {
