@@ -88,6 +88,7 @@ body {
     .herotext {
       .riceHero {
         display: flex;
+        justify-content: center;
         align-items: baseline;
         font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
           "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -467,7 +468,7 @@ body {
             font-size: 20px;
 
             span {
-              font-size: 150px;
+              font-size: 5em;
             }
           }
           p {
@@ -530,6 +531,7 @@ body {
     background-position: 0% 90%, 90vw 5%;
     width: 96vw;
     justify-content: center;
+    overflow: hidden;
     align-items: center;
     .getPara {
       display: none;
