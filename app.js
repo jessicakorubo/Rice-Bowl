@@ -10,7 +10,7 @@ arrowRight.onclick = function(){
         arrowRight.classList.add('active');
     }
     review.forEach((rev) =>{
-        rev.style.transform = "translateX(-400px)";
+        rev.style.transform = "translateX(-450px)";
     });
 }
 

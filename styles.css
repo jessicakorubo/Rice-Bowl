@@ -239,6 +239,7 @@ body {
 }
 .testimonials .testimonialSlide {
   display: flex;
+  gap: 32px;
   overflow: hidden;
   min-width: 410px;
   max-width: 410px;
@@ -246,12 +247,14 @@ body {
   max-height: 360px;
 }
 .testimonials .review {
+  margin-left: 1rem;
   flex-shrink: 0;
   transition: 2s ease-in;
   transition-property: transform;
   width: 400px;
-  height: 350px;
-  padding: 1rem 4rem;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 1rem 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -468,6 +471,9 @@ body {
   .testimonials .testimonialSlide {
     max-width: 80vw;
     overflow: hidden;
+  }
+  .testimonials .review {
+    width: 300px;
   }
   .testimonials .customers {
     text-align: center;
