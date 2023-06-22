@@ -491,6 +491,7 @@ body {
     display: none;
   }
   .getStarted .email {
+    width: 80vw;
     margin: auto;
   }
   .getStarted .email #email {
