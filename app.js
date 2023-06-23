@@ -29,5 +29,22 @@ const hamburger = document.querySelector(".hamburger")
 hamburger.addEventListener('click',()=> {
     console.log('activeee')
     hamburger.classList.toggle('active');
-    mobile_menu.classList.toggle('active');
+   mobile_display.classList.toggle('active')
 });
+
+const menuBar = document.querySelector('.navbarNone')
+
+document.addEventListener('scroll', ()=> {
+    if (window.scrollY > 100){
+        menuBar.style.backgroundColor = "rgb(41, 119, 215)";
+    }
+    else {
+        menuBar.style.backgroundColor = "rgb(183, 183, 245)";
+    }
+})
+
+
+// Making the menu active
+
+const mobile_display = document.querySelector('.nav-mobile-wrap');
+

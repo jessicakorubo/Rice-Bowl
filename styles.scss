@@ -14,6 +14,7 @@
   font-family: "Titilium Web";
 }
 body {
+  width: 100vw;
   overflow-x: hidden;
 }
 .viewBtn {
@@ -32,48 +33,59 @@ body {
   background-size: 200px 100px, 200px 100px, 100px 50px, 200px 100px;
   // background-size: cover;
   // filter:brightness(0.5);
+  .navbar-mobile {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
 
-  .navbarNone {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10rem;
-    height: 5rem;
+    .navbarNone {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10rem;
+      height: 5rem;
+      background-color: rgb(183, 183, 245);
 
-    .logo {
-      // transform: scale(0.5);
-      height: 150px;
-      width: fit-content;
+      .logo {
+        // transform: scale(0.5);
+        height: 90px;
+        width: 170px;
 
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
       }
-    }
-    .hamburger {
-      display: none;
-    }
-    .navlinks {
-      ul {
-        display: flex;
-        gap: 1em;
-        li {
-          list-style: none;
+      .hamburger {
+        display: none;
+      }
+      .navlinks {
+        ul {
+          display: flex;
+          gap: 1em;
+          li {
+            list-style: none;
 
-          a {
-            text-decoration: none;
-            color: black;
-            font-weight: 800;
-            font-family: url(Fonts/Titillium_Web/TitilliumWeb-Light.ttf);
+            a {
+              text-decoration: none;
+              color: black;
+              font-weight: 800;
+              font-family: url(Fonts/Titillium_Web/TitilliumWeb-Light.ttf);
 
-            &:hover {
-              color: rgb(100, 10, 10);
+              &:hover {
+                color: rgb(100, 10, 10);
+              }
             }
           }
         }
       }
     }
+  }
+  .nav-mobile-wrap {
+    display: none;
   }
   .hero {
     display: flex;
@@ -196,6 +208,7 @@ body {
   }
   .menuSlide {
     display: flex;
+    flex-wrap: wrap;
     width: 90%;
     margin: auto;
     gap: 15%;
@@ -257,7 +270,7 @@ body {
 
   .testimonialSlide {
     display: flex;
-    gap:32px;
+    gap: 32px;
     overflow: hidden;
     min-width: 410px;
     max-width: 410px;
@@ -409,13 +422,12 @@ body {
 
           &::after {
             position: absolute;
-            content: '';
+            content: "";
             height: 100%;
             width: 100%;
             border: 3px solid rgb(199, 42, 42);
             border-radius: 50%;
             animation: hamburger_puls 1s ease infinite;
-           
           }
 
           &.active {
@@ -436,7 +448,7 @@ body {
 
             &::after,
             &::before {
-              transition: .3s ease;
+              transition: 0.3s ease;
               transition-property: top, bottom;
               content: "";
               position: absolute;
@@ -458,12 +470,59 @@ body {
           display: none;
         }
       }
+      .nav-mobile-wrap {
+        // display: none;
+        visibility: hidden;
+        width: fit-content;
+        left: 50vw;
+        position: absolute;
+        height: fit-content;
+        background-color: rgb(41, 119, 215);
+        width: 50vw;
+        height: 100vh;
+        transition-property: visibility, height;
+        transition: 2s ease;
+        &.active {
+          display:flex;  
+          visibility: visible;
+          justify-content: center;
+          text-align: center;
+          align-items: center;
+        
+        .navlinks {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          
+
+          ul {
+            li {
+              margin-top: 1.5rem;
+              list-style: none;
+              text-align: left;
+              .dropdown-menu {
+                  a {
+                    color: black;
+                  }
+                }
+               a {
+                text-decoration: none;
+                color: white;
+                
+
+                &:hover {
+                  color:rgb(100, 10, 10);
+                }
+               }
+            }
+          }
+        }
+        }
+      }
       .hero {
         display: flex;
         flex-direction: column;
         width: 100%;
-
-        
 
         .herotext {
           width: 90%;
@@ -485,7 +544,7 @@ body {
           height: 400px;
 
           img {
-            width: 100%
+            width: 100%;
           }
         }
       }
@@ -494,7 +553,7 @@ body {
   .about {
     flex-direction: column-reverse;
     width: 100%;
-    .hieuBowlImage{
+    .hieuBowlImage {
       transform: scale(0.7);
     }
     .hieuBowlText {
@@ -536,7 +595,6 @@ body {
   .getStarted {
     flex-direction: column;
     background-position: 0% 90%, 90vw 5%;
-    width: 96vw;
     justify-content: center;
     overflow: hidden;
     align-items: center;
