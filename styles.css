@@ -449,6 +449,8 @@ body {
     visibility: visible;
     justify-content: center;
     text-align: center;
+    position: fixed;
+    z-index: 6;
     align-items: center;
   }
   .containerBig .containerhero .nav-mobile-wrap.active .navlinks {

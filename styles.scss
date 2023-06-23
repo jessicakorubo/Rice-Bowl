@@ -487,6 +487,8 @@ body {
           visibility: visible;
           justify-content: center;
           text-align: center;
+          position: fixed;
+          z-index: 6;
           align-items: center;
         
         .navlinks {
