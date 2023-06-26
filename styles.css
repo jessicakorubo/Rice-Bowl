@@ -307,10 +307,10 @@ body {
 }
 .testimonials .review .clientInfo .clientDetails .name {
   font-weight: 800;
-  color: rgb(85, 15, 235);
+  color: rgb(53, 51, 56);
 }
 .testimonials .review .clientInfo .clientDetails .name span {
-  color: cyan;
+  color: #d7eded;
 }
 .testimonials .customers {
   width: 300px;
