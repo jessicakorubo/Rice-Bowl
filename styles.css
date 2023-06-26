@@ -384,6 +384,12 @@ body {
 .footerGrid .grid ul li a {
   text-decoration: none;
 }
+.footerGrid .footermail {
+  font-family: "Parisienne";
+  font-size: 25px;
+  font-weight: 700;
+  text-align: center;
+}
 
 @media screen and (max-width: 900px) {
   .containerBig .containerhero .navbarNone {
