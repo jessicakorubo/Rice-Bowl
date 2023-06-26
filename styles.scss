@@ -210,12 +210,15 @@ body {
     display: flex;
     flex-wrap: wrap;
     width: 90%;
+    justify-content: center;
+    align-items: center;
     margin: auto;
     gap: 15%;
     margin-top: 4rem;
     .food {
       display: flex;
       flex-direction: column;
+      // text-align: center;
       align-items: center;
       justify-content: center;
       .foodPic {
@@ -267,31 +270,47 @@ body {
   justify-content: center;
   align-items: center;
   gap: 10rem;
+  // width: 100;
 
   .testimonialSlide {
+    // position: absolute;
     display: flex;
-    gap: 32px;
+    box-sizing: border-box;
+    width: 100%;
+    position: absolute;
+    // justify-content: center;
+    align-items: center;
+    // overflow: hidden;
+    top: 0;
+    gap: 40px;
+    left: 0;
+    transition:  2s ease;
+    right: 0;
+  }
+  .reviewbox {
+    position: relative;
+    width: 450px;
+    height: 300px;
+    // border: 2px solid orangered;
     overflow: hidden;
-    max-width: 410px;
-    min-height: 360px;
-    max-height: 360px;
   }
   .review {
-    margin-left: 1rem;
-    flex-shrink: 0;
-    transition: 2s ease-in;
-    transition-property: transform;
-    width: 400px;
-    height: fit-content;
-    padding: 1rem 2rem;
+    // position: relative;
+    width: 100%;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align: center;
     align-items: center;
-    // padding: 1rem 4rem;
-    // height: 300px;
-    border-radius: 76% 24% 100% 0% / 45% 78% 22% 55%;
+    // top: 0;
+    background: rgb(40, 147, 223);
+    box-sizing: border-box;
+    height: 100%;
+    left: 0;
+    flex-shrink: 0;
+    margin-left: 0px;
+    
+    border-radius: 16% 24% 100% 0% / 15% 28% 22% 35%;
     box-shadow: inset 20px 20px 20px rgba(0, 0, 0, 0.05),
       25px 35px 20px rgba(0, 0, 0, 0.05), 25px 30px 30px rgba(0, 0, 0, 0.05),
       inset -20px -20px 25px rgba(255, 255, 255, 0.9);
@@ -334,18 +353,25 @@ body {
     .arrows {
       gap: 3rem;
       display: inline-flex;
-      .arrowLeft svg,
-      .arrowRight > svg {
-        width: 5rem;
-        height: 5rem;
+      svg.arrowLeft ,
+      svg.arrowRight  {
+        
         transition: 1s ease-in;
         cursor: pointer;
-        color: cyan;
-        &.active {
-          color: black;
+        color: black;
           width: 3rem;
           height: 5rem;
           opacity: 0.5;
+        pointer-events: none;
+        
+        &.active {
+          pointer-events: all;
+          opacity: 1;
+          color: cyan;
+          width: 5rem;
+        height: 5rem;
+
+        
         }
       }
     }
@@ -582,11 +608,13 @@ body {
     gap: 4rem;
 
     .testimonialSlide {
-      max-width: 80vw;
-      overflow: hidden;
+      width: 90vw;
+      // overflow: hidden;
     }
-    .review {
-      width: 300px;
+    .reviewbox {
+      width: 90%;
+
+
     }
     .customers {
       text-align: center;

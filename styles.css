@@ -192,6 +192,8 @@ body {
   display: flex;
   flex-wrap: wrap;
   width: 90%;
+  justify-content: center;
+  align-items: center;
   margin: auto;
   gap: 15%;
   margin-top: 4rem;
@@ -251,27 +253,36 @@ body {
 }
 .testimonials .testimonialSlide {
   display: flex;
-  gap: 32px;
+  box-sizing: border-box;
+  width: 100%;
+  position: absolute;
+  align-items: center;
+  top: 0;
+  gap: 40px;
+  left: 0;
+  transition: 2s ease;
+  right: 0;
+}
+.testimonials .reviewbox {
+  position: relative;
+  width: 450px;
+  height: 300px;
   overflow: hidden;
-  max-width: 410px;
-  min-height: 360px;
-  max-height: 360px;
 }
 .testimonials .review {
-  margin-left: 1rem;
-  flex-shrink: 0;
-  transition: 2s ease-in;
-  transition-property: transform;
-  width: 400px;
-  height: -moz-fit-content;
-  height: fit-content;
-  padding: 1rem 2rem;
+  width: 100%;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center;
   align-items: center;
-  border-radius: 76% 24% 100% 0%/45% 78% 22% 55%;
+  background: rgb(40, 147, 223);
+  box-sizing: border-box;
+  height: 100%;
+  left: 0;
+  flex-shrink: 0;
+  margin-left: 0px;
+  border-radius: 16% 24% 100% 0%/15% 28% 22% 35%;
   box-shadow: inset 20px 20px 20px rgba(0, 0, 0, 0.05), 25px 35px 20px rgba(0, 0, 0, 0.05), 25px 30px 30px rgba(0, 0, 0, 0.05), inset -20px -20px 25px rgba(255, 255, 255, 0.9);
 }
 .testimonials .review .comment {
@@ -311,20 +322,23 @@ body {
   gap: 3rem;
   display: inline-flex;
 }
-.testimonials .customers .arrows .arrowLeft svg,
-.testimonials .customers .arrows .arrowRight > svg {
-  width: 5rem;
-  height: 5rem;
+.testimonials .customers .arrows svg.arrowLeft,
+.testimonials .customers .arrows svg.arrowRight {
   transition: 1s ease-in;
   cursor: pointer;
-  color: cyan;
-}
-.testimonials .customers .arrows .arrowLeft svg.active,
-.testimonials .customers .arrows .arrowRight > svg.active {
   color: black;
   width: 3rem;
   height: 5rem;
   opacity: 0.5;
+  pointer-events: none;
+}
+.testimonials .customers .arrows svg.arrowLeft.active,
+.testimonials .customers .arrows svg.arrowRight.active {
+  pointer-events: all;
+  opacity: 1;
+  color: cyan;
+  width: 5rem;
+  height: 5rem;
 }
 
 .getStarted {
@@ -525,11 +539,10 @@ body {
     gap: 4rem;
   }
   .testimonials .testimonialSlide {
-    max-width: 80vw;
-    overflow: hidden;
+    width: 90vw;
   }
-  .testimonials .review {
-    width: 300px;
+  .testimonials .reviewbox {
+    width: 90%;
   }
   .testimonials .customers {
     text-align: center;
